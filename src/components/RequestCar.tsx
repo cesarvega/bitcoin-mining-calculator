@@ -6,7 +6,9 @@ export function RequestCar() {
   // Función para manejar la solicitud POST
   const handleRequestCar = async () => {
     try {
+
       const response = await fetch(import.meta.env.VITE_URL_SOCKET, {
+
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
