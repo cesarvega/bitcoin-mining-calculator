@@ -6,12 +6,12 @@ export function RequestCar() {
   // Función para manejar la solicitud POST
   const handleRequestCar = async () => {
     try {
-      const response = await fetch('https://backend-omniparking-1.onrender.com/request-car', {
+      const response = await fetch('http://localhost:4242/request-car', {
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ id }), // Enviamos el id en el body
+        body: JSON.stringify({ session_id :id }), // Enviamos el id en el body
       });
 
       // Verificar si la respuesta es exitosa
