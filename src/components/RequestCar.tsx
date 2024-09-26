@@ -3,22 +3,31 @@ import { useParams } from 'react-router-dom';
 export function RequestCar() {
   const { id } = useParams(); // Hook para obtener el parámetro dinámico "id" de la URL
 
+  // Separar el id y el keycode usando un "_"
+ 
+  const [sessionId, keycode] = id?.split('_') || [];
+
+   // Aquí separas el "id" y el "keycode"
+
   // Función para manejar la solicitud POST
   const handleRequestCar = async () => {
     try {
 
+
       const response = await fetch(import.meta.env.VITE_URL_SOCKET, {
 
         method: 'POST', 
+
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ session_id :id }), // Enviamos el id en el body
+        body: JSON.stringify({ session_id: sessionId, license_plate: keycode }), // Enviamos el sessionId y keycode
       });
 
       // Verificar si la respuesta es exitosa
       if (!response.ok) {
-        throw new Error('Error en la solicitud');
+        const errorMessage = await response.text();
+        throw new Error(`Error en la solicitud: ${errorMessage}`);
       }
 
       const data = await response.json(); // Obtener los datos de la respuesta
@@ -30,6 +39,7 @@ export function RequestCar() {
 
   return (
     <div className="w-full h-screen bg-gray-900 flex">
+      <h1>{keycode}</h1>
       <div className='flex flex-col mt-10 gap-4 p-4'>
         <img src="/logo.jpeg" alt="logo omniparking" />
         <button 
