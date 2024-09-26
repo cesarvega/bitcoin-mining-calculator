@@ -11,7 +11,7 @@ export function RequestCar() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({session_id: id }), // Enviamos el id en el body
+        body: JSON.stringify({ session_id :id }), // Enviamos el id en el body
       });
 
       // Verificar si la respuesta es exitosa
