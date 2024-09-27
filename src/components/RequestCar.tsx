@@ -12,9 +12,10 @@ export function RequestCar() {
   // Función para manejar la solicitud POST
   const handleRequestCar = async () => {
     try {
-      // Hacemos la solicitud al backend usando el id (sessionId) y el keycode
+
       const response = await fetch(import.meta.env.VITE_URL_SOCKET, {
-        method: 'POST',
+
+        method: 'POST', 
         headers: {
           'Content-Type': 'application/json',
         },
