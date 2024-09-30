@@ -36,18 +36,21 @@ export function RequestCar() {
   };
 
   return (
-    <div className="w-full h-screen bg-gray-900 flex">
-      <h1>{keycode}</h1>
-      <div className='flex flex-col mt-10 gap-4 p-4'>
-        <img src="/logo.jpeg" alt="logo omniparking" />
-        <button 
-          onClick={handleRequestCar} // Llama a la función handleRequestCar al hacer clic
-          className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none"
-        >
-          Request My Car
-        </button>
-      </div>
+    <div className="w-full h-screen bg-gray-900 flex items-center justify-center">
+    <div className='flex flex-col items-center justify-center gap-8 p-6 bg-gray-800 rounded-lg shadow-lg'>
+      <img 
+        src="/logo.jpeg" 
+        alt="logo omniparking" 
+        className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48  mb-4"
+      />
+      <button 
+        onClick={handleRequestCar} 
+        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none"
+      >  
+        Request My Car
+      </button>
     </div>
+  </div>
   );
 }
 
