@@ -1,6 +1,7 @@
 # React + TypeScript + Vite
 
 Run npm install 
+
 Run npn run dev 
 
 For BE replace the URL in the .env file
